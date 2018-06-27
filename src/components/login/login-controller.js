@@ -1,9 +1,22 @@
-angular
-		.module('app')
-		.controller('Guest.LoginController', ['$scope', 'IndexService', Controller]);
+  class Controller {
+		constructor($scope, IndexService) {
+			this.scope = $scope
+			this.IS = IndexService
+			this.onLoad()
+		}
 	
-	function Controller($scope, IndexService) { 
-		IndexService.getRequest(function(data) {
-			console.log(data)
-		})
-    }
+		onLoad() {
+			this.IS.getRequest(function(data) {
+				console.log(data)
+			})
+		}
+	
+		updateUser(user) {
+			this.UsersStore.updateUser(user);
+		}
+	}
+
+	angular
+		.module('app')
+		.service('IndexService')
+		.controller('Guest.LoginController', ['$scope', 'IndexService', Controller]);

@@ -1,14 +1,15 @@
-angular.module('app.routes', ['ngRoute'])
-    .config(['$routeProvider', '$locationProvider',function($routeProvider, $locationProvider) {
-        $routeProvider
-         .when('/', {
-          templateUrl: 'login/login.html',
-          controller: 'Guest.LoginController'
+angular.module('app.routes', ['ui.router'])
+    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    $stateProvider
+        .state('guest', {
+            url: '/',
+            templateUrl: 'login/login.html',
+            controller: 'Guest.LoginController as $ctrl'
         })
-        .when('/dashboard', {
+        .state('admin', {
+          url: '/dashboard',
           templateUrl: 'dashboard/dashboard.html',
-          controller: 'Admin.DashboardController'
+          controller: 'Admin.DashboardController as $ctrl'
         })
-        $locationProvider.hashPrefix('!')
-        $routeProvider.otherwise({redirectTo: '/'})
+    $urlRouterProvider.otherwise("/");
 }])

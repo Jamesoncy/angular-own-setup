@@ -1,2 +1,2 @@
-angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('dashboard/dashboard.html','<h1>Dashboard</h1>\n<button ng-click = "click()" value = "tewqdsada"></button>');
+angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('dashboard/dashboard.html','<h1>Dashboard</h1>\n<button type = "button" ng-click = "$ctrl.click()">tewqdsada</button>');
 $templateCache.put('login/login.html','<h1>Login</h1>');}]);

@@ -14,6 +14,13 @@ const template = './src/templates.js'
 const clean = require('gulp-clean')
 const runSequence = require('run-sequence')
 const babel = require('gulp-babel');
+const glebab = require('gulp-lebab');
+
+gulp.task('es6' ,() => 
+    gulp.src([app, template , config, service, controllers])
+     .pipe(glebab())
+     .pipe(gulp.dest('test'))
+)
 
 gulp.task('clean', () =>
     gulp.src([ app, template, "./build/*"])
@@ -22,9 +29,10 @@ gulp.task('clean', () =>
 
 gulp.task('iife', function () {
     return gulp.src([app, template , config, service, controllers])
-       .pipe(babel({
-        presets: ['env']
-       }))
+        .pipe(babel({
+            presets: ['env'],
+            plugins: ['transform-class-properties']
+        }))
       .pipe(iife())
       .pipe(concat('main.js'))
       .pipe(gulp.dest('./build'))
@@ -39,10 +47,6 @@ gulp.task('template',  function () {
 gulp.task('browserify', function() {
   // Single entry point to browserify
   return gulp.src('./src/app.js')
-      /*.pipe(browserify({
-        insertGlobals : true,
-        debug : !gulp.env.production
-      }))*/
       .pipe(rename('index.js'))
       .pipe(gulp.dest('./src/'))
 });
