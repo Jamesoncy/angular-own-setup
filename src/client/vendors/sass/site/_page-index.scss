@@ -1,0 +1,93 @@
+// style for the landing page
+.index-page {
+  .page-header{
+    //height: 125vh;
+
+    .container{
+      > .content-center{
+        top: 60%;
+      }
+    }
+  }
+
+  .play {
+    margin-top: 12%;
+  }
+}
+
+.section.section-leaderboard {
+  .pagination {
+    .page-item:not(.active) {
+      .page-link {
+        color: $dark-gray;
+      }
+    }
+  }
+}
+
+.section.section-statistics {
+  .card .card-body {
+    text-align: center;
+    i {
+      margin-top: 10px;
+      font-size: 10vh;
+    }
+  }
+  .card {
+    .card-body, .caption, i, p, a {
+      color: $black-color;
+    }
+  }
+  .nav-align-center {
+    margin-bottom: 20px;
+  }
+}
+
+.section.section-faq {
+  background: #EEEEEE;
+}
+
+.section-signup {
+  .card-signup {
+    .title {
+      color: $orange;
+    }
+  }
+}
+
+.tp {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.popover .popover-header {
+  font-size: 0.8rem;
+  color: $gray-800;
+}
+
+.quest-tip {
+  i {
+    font-size: inherit !important;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .footer {
+    nav, .copyright {
+      float: none;
+      text-align: center;
+      display: block;
+    }
+
+    .copyright {
+      margin-top: 20px;
+    }
+  }
+  .section-statistics {
+    .nav-tabs {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}

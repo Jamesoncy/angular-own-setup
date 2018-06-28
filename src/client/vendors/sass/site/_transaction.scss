@@ -1,0 +1,38 @@
+.transaction-card {
+  overflow: visible;
+  .card-body {
+    padding-left: 40px;
+  }
+  .nav-tabs > .nav-item > .nav-link.active {
+    border-color: white;
+  }
+
+  .card-body {
+    .nav-tabs > .nav-item > .nav-link.active {
+      border-color: #ddd;
+    }
+  }
+
+  .nav-item .input-group .input-group-addon {
+    margin-right: 4px;
+  }
+
+  .input-group {
+    margin-bottom: 0px;
+    .input-group-addon > a {
+      line-height: 0px;
+    }
+  }
+  [data-background-color] .input-group-addon,
+  [data-background-color] .form-group.form-group-no-border .input-group-addon,
+  [data-background-color] .input-group.form-group-no-border .input-group-addon {
+    border-color: white;
+  }
+  .player-username {
+    border: 1px solid #fff;
+    border-radius: 30px;
+    font-size: 1rem;
+    padding: 11px 23px;
+    line-height: 1.5;
+  }
+}

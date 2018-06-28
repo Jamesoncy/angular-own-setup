@@ -1,0 +1,20 @@
+$fa-font-path:        'fonts/' !default;
+$flag-icon-css-path:  'fonts/' !default;
+$black: #231815;
+
+@import '../../../node_modules/flag-icon-css/sass/flag-icon.scss';
+@import '../../../node_modules/font-awesome/scss/font-awesome.scss';
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+@import './sass/now-ui-kit';
+@import './sass/site/sections';
+@import './sass/site/modification';
+@import './sass/site/logo';
+@import './sass/site/to-top';
+@import './sass/site/page-index';
+@import './sass/site/page-login';
+@import './sass/site/page-profile';
+@import './sass/site/play';
+@import './sass/site/history';
+@import './sass/site/transaction';
+@import './sass/site/csp';
